@@ -35,6 +35,6 @@ services:
     publishDir: dist
     envVars:
       - key: VITE_API_URL
-        value: https://movie-universe-api.onrender.com/api # Change if your backend URL is different
+        value: https://movie-universe-recomendation.onrender.com/api # Updated backend URL
       - key: VITE_TMDB_IMAGE_BASE
         value: https://image.tmdb.org/t/p
