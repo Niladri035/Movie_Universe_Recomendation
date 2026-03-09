@@ -1,10 +1,6 @@
-# Tasks - Debugging Network Error
+# Tasks - Final CORS Fix
 
-- [x] Relax CORS in `server/index.js` (Added Vercel & Render URLs) [x]
-- [x] Push CORS fix to GitHub [x]
-- [ ] Verify Render Backend Status [/]
-    - [ ] Check `https://movie-universe-recomendation.onrender.com/api/health` [/]
-- [ ] Diagnose Environment (Local vs Production) [/]
-    - [ ] Confirm if user is testing locally or deployed [/]
-    - [ ] Check if Render Environment Variables are set [/]
-- [ ] Fix Frontend URL if needed [/]
+- [x] Identify new Vercel origin [x]
+- [ ] Update `server/index.js` with flexible CORS logic [/]
+- [ ] Push fix to GitHub [/]
+- [ ] Verify deployment on Render [/]
