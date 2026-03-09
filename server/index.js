@@ -10,7 +10,8 @@ const app = express();
 // Middleware
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://movie-universe-recomendation-client.onrender.com'
+  'https://movie-universe-recomendation-client.onrender.com',
+  'https://movie-universe-recomendation-2cit.vercel.app'
 ];
 
 app.use(cors({

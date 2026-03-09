@@ -1,13 +1,10 @@
-# Tasks
+# Tasks - Debugging Network Error
 
-- [x] Create server .gitignore [x]
-- [x] Automate with `render.yaml` (Blueprint) [x]
-- [x] Create deployment guide [x]
-- [x] Update CLIENT_URL in server/.env [x]
-- [x] Update CLIENT_URL in deployment guide [x]
-- [ ] Push all changes to GitHub [/]
-- [ ] Follow up on deployment status [/]
-    - [ ] Document Render configuration steps (Root Directory, Build Command, Start Command) [/]
-    - [ ] List required environment variables [/]
-- [ ] Final Verification
-    - [ ] Confirm deployment plan with user [/]
+- [x] Relax CORS in `server/index.js` (Added Vercel & Render URLs) [x]
+- [x] Push CORS fix to GitHub [x]
+- [ ] Verify Render Backend Status [/]
+    - [ ] Check `https://movie-universe-recomendation.onrender.com/api/health` [/]
+- [ ] Diagnose Environment (Local vs Production) [/]
+    - [ ] Confirm if user is testing locally or deployed [/]
+    - [ ] Check if Render Environment Variables are set [/]
+- [ ] Fix Frontend URL if needed [/]
