@@ -1,0 +1,127 @@
+.search-page {
+  padding-top: 120px;
+  min-height: 100vh;
+
+  .search-header-section {
+    text-align: center;
+    margin-bottom: 60px;
+
+    h1 { margin-bottom: 30px; }
+  }
+
+  .search-bar-container {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    
+    .search-input-wrapper {
+      position: relative;
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color);
+      border-radius: 40px;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      transition: var(--transition-smooth);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+      &:focus-within {
+        border-color: var(--accent-blue);
+        box-shadow: 0 10px 40px rgba(0, 240, 255, 0.2);
+      }
+
+      .search-icon {
+        margin-left: 25px;
+        font-size: 1.4rem;
+        color: var(--text-muted);
+      }
+
+      input {
+        flex: 1;
+        padding: 15px 20px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.2rem;
+        
+        &::placeholder { color: var(--text-muted); opacity: 0.6; }
+      }
+
+      .clear-icon {
+        margin-right: 25px;
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        cursor: pointer;
+        &:hover { color: #fff; }
+      }
+    }
+  }
+
+  .filter-chips {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    
+    .filter-chip {
+      padding: 8px 25px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+
+      &:hover { background: rgba(255,255,255,0.1); color: #fff; }
+      
+      &.active {
+        background: var(--accent-blue);
+        color: #000;
+        border-color: var(--accent-blue);
+        box-shadow: 0 5px 15px rgba(0, 240, 255, 0.3);
+      }
+    }
+  }
+
+  .search-results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+    padding-bottom: 80px;
+
+    .search-status {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 100px 0;
+      
+      h2 { color: var(--text-muted); font-weight: 400; }
+
+      .loading-spinner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        color: var(--accent-blue);
+        
+        .spin {
+          font-size: 2.5rem;
+          animation: spin 1s linear infinite;
+        }
+
+        span {
+          font-family: var(--font-accent);
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 0.9rem;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

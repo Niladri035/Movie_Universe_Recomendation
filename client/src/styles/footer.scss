@@ -1,0 +1,119 @@
+.footer {
+  background: linear-gradient(to bottom, transparent, rgba(5, 5, 5, 0.9));
+  padding: 80px 0 40px;
+  position: relative;
+  border-top: 1px solid var(--border-color);
+  margin-top: 100px;
+  
+  .container {
+    max-width: 1400px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .footer-brand {
+    .text-gradient {
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 25px;
+      max-width: 350px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+
+      a {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-color);
+        border-radius: 50%;
+        color: #fff;
+        font-size: 1.2rem;
+        transition: var(--transition-smooth);
+
+        &:hover {
+          background: var(--accent-primary);
+          border-color: var(--accent-primary);
+          box-shadow: 0 0 20px var(--accent-glow);
+          transform: translateY(-5px);
+        }
+      }
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .footer-title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+
+    a {
+      color: var(--text-muted);
+      transition: var(--transition-fast);
+      font-size: 0.95rem;
+
+      &:hover {
+        color: var(--accent-blue);
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .footer-bottom {
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+    }
+
+    .tmdb-attr {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .tmdb-color {
+        color: #01b4e4; // Official TMDB Blue
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

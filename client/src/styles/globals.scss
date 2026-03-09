@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  // Colors (Dark Cinematic Theme)
+  --bg-color: #050505;
+  --bg-card: rgba(20, 20, 20, 0.6);
+  --bg-nav: rgba(5, 5, 5, 0.8);
+  
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+  
+  --accent-primary: #e50914; // Netflix-style red
+  --accent-glow: rgba(229, 9, 20, 0.5);
+  --accent-blue: #00f0ff; // Cyberpunk blue glow
+  
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glass-color: rgba(255, 255, 255, 0.03);
+  
+  // Typography
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-accent: 'Space Grotesk', sans-serif;
+  
+  // Spacing & Layout
+  --nav-height: 80px;
+  --container-px: 5vw;
+  
+  // Transitions
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+[data-theme="light"] {
+  --bg-color: #f5f5f7;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-nav: rgba(245, 245, 247, 0.9);
+  
+  --text-main: #1d1d1f;
+  --text-muted: #86868b;
+  
+  --accent-primary: #e50914;
+  --accent-glow: rgba(229, 9, 20, 0.3);
+  --accent-blue: #0088ff;
+  
+  --border-color: rgba(0, 0, 0, 0.1);
+  --glass-color: rgba(255, 255, 255, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}

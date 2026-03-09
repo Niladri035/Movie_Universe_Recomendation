@@ -1,0 +1,134 @@
+.admin-page {
+  padding-top: 120px;
+  min-height: 100vh;
+
+  .admin-header {
+    margin-bottom: 50px;
+    
+    .title-icon { margin-right: 15px; color: var(--accent-blue); }
+    .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+  }
+
+  .admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+
+    .stat-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: var(--transition-smooth);
+      
+      &.active { border-color: rgba(0, 240, 255, 0.3); }
+      &.banned { border-color: rgba(229, 9, 20, 0.3); }
+
+      .stat-icon { font-size: 2.5rem; color: var(--text-muted); opacity: 0.5; }
+      
+      .stat-content {
+        .stat-label { display: block; font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .stat-value { display: block; font-size: 2rem; font-weight: 700; color: #fff; }
+      }
+      
+      &:hover { transform: translateY(-5px); border-color: var(--accent-blue); }
+    }
+  }
+
+  .admin-table-container {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+
+      th {
+        padding: 20px;
+        background: rgba(255,255,255,0.05);
+        color: var(--text-muted);
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+      }
+
+      td {
+        padding: 20px;
+        border-bottom: 1px solid var(--border-color);
+        color: #fff;
+        vertical-align: middle;
+      }
+
+      tr:last-child td { border-bottom: none; }
+
+      .user-cell {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        
+        .user-avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, var(--accent-blue), var(--accent-primary));
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 700;
+          color: #000;
+        }
+      }
+
+      .role-cell {
+        .badge {
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 0.75rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          
+          &.admin { background: rgba(0, 240, 255, 0.1); color: var(--accent-blue); border: 1px solid var(--accent-blue); }
+          &.user { background: rgba(255, 255, 255, 0.1); color: var(--text-muted); border: 1px solid var(--border-color); }
+        }
+      }
+
+      .status-dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-right: 8px;
+        &.active { background: #00ff88; box-shadow: 0 0 10px #00ff88; }
+        &.banned { background: var(--accent-primary); box-shadow: 0 0 10px var(--accent-primary); }
+      }
+
+      .admin-action-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 15px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition-fast);
+
+        &.ban { color: var(--accent-primary); border: 1px solid rgba(229, 9, 20, 0.3); &:hover { background: var(--accent-primary); color: #fff; } }
+        &.revive { color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.3); &:hover { background: #00ff88; color: #000; } }
+      }
+
+      .table-status { text-align: center; padding: 100px 0; color: var(--text-muted); }
+    }
+  }
+}
