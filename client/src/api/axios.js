@@ -21,6 +21,14 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
     (response) => response,
     (error) => {
+        console.error("🌐 API ERROR:", {
+            message: error.message,
+            url: error.config?.url,
+            method: error.config?.method,
+            status: error.response?.status,
+            data: error.response?.data
+        });
+
         if (error.response?.status === 401 && !error.config.url.includes('/auth/login')) {
             localStorage.removeItem('movieplatform_token');
             localStorage.removeItem('movieplatform_user');
